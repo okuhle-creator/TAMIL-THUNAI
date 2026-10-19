@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ta, en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tamil Thunai — Learn Tamil. Live more confidently.</title>
+  <meta name="description" content="A calm, practical language-learning platform for everyday Tamil in Tamil Nadu. Verified phrases, pronunciation, flashcards, quizzes, and scenario-based conversation missions.">
+  <meta name="theme-color" content="#1C3B2B">
+
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./src/css/main.css">
+</head>
+<body class="mode-beginner">
+  <!-- Top App Navigation Header -->
+  <header class="app-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand" aria-label="Tamil Thunai Home">
+        <div class="brand-emblem" aria-hidden="true">து</div>
+        <div class="brand-info">
+          <h1>Tamil Thunai</h1>
+          <span>தமிழ் துணை • Language Companion</span>
+        </div>
+      </a>
+
+      <!-- Primary Navigation -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#lessons" class="nav-link">Lessons</a>
+        <a href="#conversations" class="nav-link">Missions</a>
+        <a href="#daily" class="nav-link">Daily Practice</a>
+        <a href="#search" class="nav-link">Search</a>
+        <a href="#phrasebook" class="nav-link">Phrasebook</a>
+      </nav>
+
+      <!-- Utility Switchers -->
+      <div class="header-actions">
+        <button id="btn-toggle-display-mode" class="mode-toggle-btn" title="Toggle between Beginner (Romanized) and Script practice modes">
+          <span>Mod: Beginner</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Notification Banner for voice support / updates -->
+  <div class="container" style="padding-top: 14px;">
+    <div id="voice-status-notice" class="system-notice warning" style="display: none;" role="status">
+      <!-- Injected if browser lacks native Tamil synthetic voice -->
+    </div>
+  </div>
+
+  <!-- Main Dynamic Application Content Container -->
+  <main id="app-content" class="app-main container" role="main">
+    <!-- Rendered dynamically by main.js -->
+  </main>
+
+  <!-- App Footer -->
+  <footer class="app-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Tamil Thunai (தமிழ் துணை)</strong> — Designed for students, newcomers, and residents living in Tamil Nadu.
+      </div>
+      <div class="footer-links">
+        <a href="#home" class="footer-link">Dashboard</a>
+        <a href="#lessons" class="footer-link">Curriculum</a>
+        <a href="#conversations" class="footer-link">Scenarios</a>
+        <a href="#phrasebook" class="footer-link">Settings & Data</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- App Entry Script -->
+  <script type="module" src="./src/main.js"></script>
+
+  <!-- Register Service Worker for offline support -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(err => {
+          console.warn('Service worker registration failed:', err);
+        });
+      });
+    }
+  </script>
+</body>
+</html>

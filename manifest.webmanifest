@@ -1,0 +1,16 @@
+{
+  "name": "Tamil Thunai",
+  "short_name": "TamilThunai",
+  "description": "Learn practical everyday Tamil with script, romanization, flashcards, quizzes, and scenario missions.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FAF8F5",
+  "theme_color": "#1C3B2B",
+  "icons": [
+    {
+      "src": "./public/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
